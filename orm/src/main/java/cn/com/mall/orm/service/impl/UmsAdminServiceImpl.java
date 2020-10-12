@@ -7,6 +7,7 @@ import cn.com.mall.orm.mbg.model.UmsAdmin;
 import cn.com.mall.orm.mbg.model.UmsAdminExample;
 import cn.com.mall.orm.mbg.model.UmsPermission;
 import cn.com.mall.orm.service.UmsAdminService;
+import cn.hutool.core.collection.CollectionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -49,7 +50,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(username);
         List<UmsAdmin> adminList = adminMapper.selectByExample(example);
-        if (adminList != null && adminList.size() > 0) {
+        if (!CollectionUtil.isEmpty(adminList)) {
             return adminList.get(0);
         }
         return null;
