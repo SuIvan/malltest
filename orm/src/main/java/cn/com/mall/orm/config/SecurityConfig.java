@@ -3,8 +3,10 @@ package cn.com.mall.orm.config;
 import cn.com.mall.orm.component.JwtAuthenticationTokenFilter;
 import cn.com.mall.orm.component.RestAuthenticationEntryPoint;
 import cn.com.mall.orm.component.RestfulAccessDeniedHandler;
+//import cn.com.mall.orm.dto.AdminUserDetails;
 import cn.com.mall.orm.dto.AdminUserDetails;
 import cn.com.mall.orm.mbg.model.UmsAdmin;
+import cn.com.mall.orm.mbg.model.UmsPermission;
 import cn.com.mall.orm.service.UmsAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,6 +24,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import java.util.List;
 
 /**
  * SpringSecurity的配置
