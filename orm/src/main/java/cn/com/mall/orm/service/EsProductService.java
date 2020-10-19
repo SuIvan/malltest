@@ -35,4 +35,5 @@ public interface EsProductService {
      */
     Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize);
 
+    Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort);
 }
